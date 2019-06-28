@@ -1,0 +1,19 @@
+observers,date,year,dive,swath,north_south,east_west,red_white,diameter_cm,circum_cm,distance_cable_cm,distance_tag_cm,reference_tag,orientation_h_v_s_o
+"Jamie Leaonard, Jennifer Yin, David Stentiford",2019-06-26,2019,dive-1,140 E,north,east,white,13,33,110,980,130,H
+"Jamie Leaonard, Jennifer Yin, David Stentiford",2019-06-26,2019,dive-1,140 E ,north,east,white,16.2,30.2,260,300,100,V
+"Jamie Leaonard, Jennifer Yin, David Stentiford",2019-06-26,2019,dive-2,100 E,south,east,white,20,57,50,465,70,V
+"Jamie Leaonard, Jennifer Yin, David Stentiford",2019-06-26,2019,dive-2,100 E,south,east,white,14.2,42,483,731,60,S
+"Angie Korabik, Mike Burnett, Jim Rymarcsuk",2019-06-26,2019,dive-1,140 W,north,west,white,11,24,30,500,130,V
+"Angie Korabik, Mike Burnett, Jim Rymarcsuk",2019-06-26,2019,dive-1,140 W,north,west,white,12,30,560,821,120,V
+"Angie Korabik, Mike Burnett, Jim Rymarcsuk",2019-06-26,2019,dive-1,140 W,north,west,white,13,31,290,150,120,V
+"Angie Korabik, Mike Burnett, Jim Rymarcsuk",2019-06-26,2019,dive-2,100 W,south,west,white,13,33,113,2,60,V
+"Taylor Hughes, Hanna Payne, Peter Shum",2019-06-26,2019,dive-1,100 W,south,west,NA,NA,NA,NA,NA,NA,NA
+"Taylor Hughes, Hanna Payne, Peter Shum",2019-06-26,2019,dive-2,140 W,north,west,white,14,45,40,530,130,V
+"Taylor Hughes, Hanna Payne, Peter Shum",2019-06-26,2019,dive-2,140 W,north,west,white,10,30,320,180,130,V
+"Taylor Hughes, Hanna Payne, Peter Shum",2019-06-26,2019,dive-2,140 W,north,west,white,12,52,500,0,130,V
+"Taylor Hughes, Hanna Payne, Peter Shum",2019-06-26,2019,dive-2,140 W,north,west,white,13,30,460,770,100,V
+"Samantha Andrzejaczek, Ann Marie Abraham",2019-06-26,2019,dive-1,100 E,south,east,white,21,50,60,482,70,S
+"Samantha Andrzejaczek, Ann Marie Abraham",2019-06-26,2019,dive-1,100 E,south,east,white,16,35,228,895,60,S
+"Samantha Andrzejaczek, Ann Marie Abraham",2019-06-26,2019,dive-2,140 E,north,east,white,12,31,120,980,130,V
+"Samantha Andrzejaczek, Ann Marie Abraham",2019-06-26,2019,dive-2,140 E,north,east,white,14,40,230,300,100,V
+"Samantha Andrzejaczek, Ann Marie Abraham",2019-06-26,2019,dive-2,140 E,north,east,white,15,32,420,350,100,V
