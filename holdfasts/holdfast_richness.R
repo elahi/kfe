@@ -68,13 +68,12 @@ d_meta <- d_meta %>%
 d_meta %>% 
   ggplot(aes(n_ind, n_spp, color = site, shape = era)) + 
   labs(x = "No. of individuals", y = "No. of observed species") + 
-  geom_smooth(aes(n_ind, n_spp, color = era), se = TRUE, 
-              method = "lm", inherit.aes = FALSE, color = "gray50") + 
-  geom_point(size = 3, alpha = 0.5)
+  geom_point(size = 3, alpha = 0.5) + 
+  scale_color_viridis_d() 
 
 ggsave(here("figs", "holdfast_richness_abundance.pdf"), height = 5, width = 7)
 
-
+#### IGNORE BELOW ####
 
 #### VEGAN ####
 

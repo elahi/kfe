@@ -61,13 +61,18 @@ m <- d %>%
   select(Balanophyllia_elegans:Gobiesox_eugrammus) %>% 
   as.data.frame()
 
-# # Relativize to total
-# m_rel <- decostand(m, method = "total")
-# 
-# # Create distance matrix
-# m_dist <- vegdist(m_rel, method = "bray") %>% as.matrix(labels = T)
+# Relativize to total
+m_rel <- decostand(m, method = "total")
+rowSums(m_rel)
 
-m_mds <- metaMDS(comm = m, distance = "bray", trace = FALSE, autotransform = FALSE)
+# Square-root transformation
+m_sqrt <- m^(1/2)
+
+# Create distance matrix
+m_dist <- vegdist(m_rel, method = "bray") %>% as.matrix(labels = T)
+
+# Run mds
+m_mds <- metaMDS(comm = m_sqrt, distance = "bray", trace = FALSE, autotransform = FALSE)
 
 m_mds$stress
 
@@ -87,6 +92,7 @@ d_meta %>%
   geom_polygon(data = hull, aes(x = MDS1, y = MDS2, color = site),
                inherit.aes = FALSE, alpha = 0.1) +
   scale_color_viridis_d() + 
-  geom_point(size = 3, alpha = 0.5) 
+  geom_point(size = 3, alpha = 0.5) +
+  labs(caption = "Transformation: sqrt(abundance)")
 
 ggsave(here("figs", "holdfast_mds_abundance.pdf"), height = 5, width = 7)
