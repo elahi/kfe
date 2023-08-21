@@ -21,7 +21,8 @@ theme_set(theme_bw(base_size = 12) +
                   axis.title = element_blank(), 
                   strip.background = element_blank()))
 
-d <- read_csv(here("data", "andrews_henry_combined.csv"))
+#d <- read_csv(here("data", "andrews_henry_combined.csv"))
+d <- read_csv(here("data", "andrews_1945_230623.xlsx - andrews_henry_combined.csv"))
 
 d <- d %>% 
   mutate(date = lubridate::ymd(paste(year, month, day, sep = "-")))
@@ -35,7 +36,7 @@ d <- d %>%
   mutate(site = as.factor(site), 
          site = fct_relevel(site, 
                             "Point_Pinos", 
-                            "Otter_Point", 
+                            "Otter_Cove", 
                             "Lovers_Point", 
                             "Cabrillo_Point", 
                             "Breakwater", 
@@ -72,7 +73,7 @@ m_sqrt <- m^(1/2)
 m_dist <- vegdist(m_rel, method = "bray") %>% as.matrix(labels = T)
 
 # Run mds
-m_mds <- metaMDS(comm = m_sqrt, distance = "bray", trace = FALSE, autotransform = FALSE)
+m_mds <- metaMDS(comm = m_rel, distance = "bray", trace = FALSE, autotransform = FALSE)
 
 m_mds$stress
 
@@ -93,6 +94,6 @@ d_meta %>%
                inherit.aes = FALSE, alpha = 0.1) +
   scale_color_viridis_d() + 
   geom_point(size = 3, alpha = 0.5) +
-  labs(caption = "Transformation: sqrt(abundance)")
+  labs(caption = "Transformation: relativized to total abundance")
 
 ggsave(here("figs", "holdfast_mds_abundance.pdf"), height = 5, width = 7)

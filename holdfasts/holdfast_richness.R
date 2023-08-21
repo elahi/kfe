@@ -18,7 +18,9 @@ theme_set(theme_bw(base_size = 12) +
             theme(panel.grid = element_blank(), 
                   strip.background = element_blank()))
 
-d <- read_csv(here("data", "andrews_henry_combined.csv"))
+#d <- read_csv(here("data", "andrews_henry_combined.csv"))
+d <- read_csv(here("data", "andrews_1945_230623.xlsx - andrews_henry_combined.csv"))
+names(d)
 
 d <- d %>% 
   mutate(date = lubridate::ymd(paste(year, month, day, sep = "-")))
@@ -32,7 +34,7 @@ d <- d %>%
   mutate(site = as.factor(site), 
          site = fct_relevel(site, 
                             "Point_Pinos", 
-                            "Otter_Point", 
+                            "Otter_Cove", 
                             "Lovers_Point", 
                             "Cabrillo_Point", 
                             "Breakwater", 
@@ -68,7 +70,7 @@ d_meta <- d_meta %>%
 d_meta %>% 
   ggplot(aes(n_ind, n_spp, color = site, shape = era)) + 
   labs(x = "No. of individuals", y = "No. of observed species") + 
-  geom_point(size = 3, alpha = 0.5) + 
+  geom_point(size = 3, alpha = 1) + 
   scale_color_viridis_d() 
 
 ggsave(here("figs", "holdfast_richness_abundance.pdf"), height = 5, width = 7)
